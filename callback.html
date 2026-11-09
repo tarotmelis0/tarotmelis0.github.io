@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connecting… · Tarot Melis</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#120d1f;color:#efe9fb;font:17px/1.6 Georgia,serif;text-align:center;padding:20px}
+  a{color:#e7c36b}
+</style>
+</head>
+<body>
+<div>
+  <div style="font-size:40px;color:#e7c36b">☾ ✦</div>
+  <p>Connecting your TikTok account to Tarot Melis…</p>
+  <p id="manual" hidden>If nothing happens, <a id="link" href="#">click here</a>. Make sure the Tarot Melis app is running on this computer.</p>
+</div>
+<script>
+  // TikTok'tan gelen code/state bilgisini bilgisayardaki panele aktarır
+  var target = "http://localhost:5000/tiktok/callback" + window.location.search;
+  document.getElementById("link").href = target;
+  setTimeout(function(){ document.getElementById("manual").hidden = false; }, 2500);
+  window.location.replace(target);
+</script>
+</body>
+</html>
